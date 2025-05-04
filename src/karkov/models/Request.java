@@ -1,18 +1,20 @@
 package karkov.models;
 
-public class Request {
-    int id;
-    String zona;
-    String direccion;
-    String prioridad;
-    int horaLimite;
+import karkov.repository.RepositoryRequest;
 
-    public Request(int id, String zona, String direccion, String prioridad, int horaLimite) {
+public class Request extends RepositoryRequest {
+    int id;
+    String zone;
+    String address;
+    String prority;
+    int limitTime;
+
+    public Request(int id, String zone, String address, String prority, int limitTime) {
         this.id = id;
-        this.zona = zona;
-        this.direccion = direccion;
-        this.prioridad = prioridad;
-        this.horaLimite = horaLimite;
+        this.zone = zone;
+        this.address = address;
+        this.prority = prority;
+        this.limitTime = limitTime;
     }
 
     public int getId() {
@@ -23,46 +25,46 @@ public class Request {
         this.id = id;
     }
 
-    public String getZona() {
-        return zona;
+    public String getZone() {
+        return zone;
     }
 
-    public void setZona(String zona) {
-        this.zona = zona;
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPrioridad() {
-        return prioridad;
+    public String getPrority() {
+        return prority;
     }
 
-    public void setPrioridad(String prioridad) {
-        this.prioridad = prioridad;
+    public void setPrority(String prority) {
+        this.prority = prority;
     }
 
-    public int getHoraLimite() {
-        return horaLimite;
+    public int getLimitTime() {
+        return limitTime;
     }
 
-    public void setHoraLimite(int horaLimite) {
-        this.horaLimite = horaLimite;
+    public void setLimitTime(int limitTime) {
+        this.limitTime = limitTime;
     }
 
     @Override
     public String toString() {
         return "Request{" +
                 "id=" + id +
-                ", zona='" + zona + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", prioridad='" + prioridad + '\'' +
-                ", horaLimite=" + horaLimite +
+                ", zona='" + zone + '\'' +
+                ", direccion='" + address + '\'' +
+                ", prioridad='" + prority + '\'' +
+                ", horaLimite=" + limitTime +
                 '}';
     }
 }
