@@ -27,11 +27,14 @@ public class ServiceSortPriority {
         requestsSort.addAll(requestsSortHigh);
         requestsSort.addAll(requestsSortMedium);
         requestsSort.addAll(requestsSortLow);
-
     }
+
     public static void showSortByPriority() {
+        System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
+        System.out.println("-------------------------------------------------------------------------------");
         for(Request request : requestsSort){
             System.out.println(request.toString());
+            System.out.println("-------------------------------------------------------------------------------");
         }
     }
 }

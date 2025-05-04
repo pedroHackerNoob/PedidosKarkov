@@ -59,12 +59,7 @@ public class Request extends RepositoryRequest {
 
     @Override
     public String toString() {
-        return "Request{" +
-                "id=" + id +
-                ", zona='" + zone + '\'' +
-                ", direccion='" + address + '\'' +
-                ", prioridad='" + prority + '\'' +
-                ", horaLimite=" + limitTime +
-                '}';
+        return String.format("| %-3d | %-15s | %-30s | %-8s | %-10d |",
+                id, zone, address, prority, limitTime);
     }
 }
