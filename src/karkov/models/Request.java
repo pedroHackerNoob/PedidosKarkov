@@ -1,13 +1,13 @@
 package karkov.models;
 
-public class Pedido {
+public class Request {
     int id;
     String zona;
     String direccion;
     String prioridad;
     int horaLimite;
 
-    public Pedido(int id, String zona, String direccion, String prioridad, int horaLimite) {
+    public Request(int id, String zona, String direccion, String prioridad, int horaLimite) {
         this.id = id;
         this.zona = zona;
         this.direccion = direccion;
@@ -53,5 +53,16 @@ public class Pedido {
 
     public void setHoraLimite(int horaLimite) {
         this.horaLimite = horaLimite;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "id=" + id +
+                ", zona='" + zona + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", prioridad='" + prioridad + '\'' +
+                ", horaLimite=" + horaLimite +
+                '}';
     }
 }
