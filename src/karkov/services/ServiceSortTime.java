@@ -1,13 +1,21 @@
 package karkov.services;
 
 import karkov.models.Request;
+import karkov.repository.RepositoryRequest;
 
 import java.util.ArrayList;
 
 public class ServiceSortTime {
 
+    public static void sortByTime(){
+        ArrayList<Request> requestsSortedByTime= ServiceSortTime.sort(RepositoryRequest.getRequestArray());
+        for (Request request : requestsSortedByTime) {
+            System.out.println("-------------------------------------------------------------------------------");
+            System.out.println("ID: "+request.getId()+" Tiempo Limite: "+request.getLimitTime()+" Hora");
+        }
+    }
 
-    public static ArrayList<Request> sort(ArrayList<Request> requests) {
+    private static ArrayList<Request> sort(ArrayList<Request> requests) {
 
         Request[] helper = new Request[requests.size()];
         sort(requests, helper, 0, requests.size() - 1);
