@@ -10,7 +10,7 @@ public class RepositoryRequest {
     public static void addRequest(Request request) {
         requests.add(request);
     }
-    public static void readRequests(){
+    public static void showRequests(){
         for (Request r : requests) {
             System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
             System.out.println("-------------------------------------------------------------------------------");
@@ -22,7 +22,13 @@ public class RepositoryRequest {
     public static ArrayList<Request> getRequests() {
         return requests;
     }
+    public static Request getRequest(int id) {
 
+        return requests.get(id);
+    }
+    public static ArrayList<Request> getRequestArray() {
+        return requests;
+    }
     public static void setRequests(ArrayList<Request> requests) {
         RepositoryRequest.requests = requests;
     }
