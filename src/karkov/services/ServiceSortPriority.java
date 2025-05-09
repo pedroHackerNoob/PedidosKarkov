@@ -4,7 +4,6 @@ import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ServiceSortPriority {
     static ArrayList<Request> requestsSort = new ArrayList<>();

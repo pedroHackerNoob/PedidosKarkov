@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ServiceSortTime {
 
     /**
-     * Método principal que obtiene una lista de solicitudes desde el repositorio,
+     * Méthodo principal que obtiene una lista de solicitudes desde el repositorio,
      * las ordena por su hora límite (LimitTime) y las imprime en consola con formato.
      */
     public static void sortByTime() {
