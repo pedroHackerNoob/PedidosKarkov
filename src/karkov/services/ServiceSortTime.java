@@ -9,9 +9,12 @@ public class ServiceSortTime {
 
     public static void sortByTime(){
         ArrayList<Request> requestsSortedByTime= ServiceSortTime.sort(RepositoryRequest.getRequestArray());
+
+        System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
+        System.out.println("-------------------------------------------------------------------------------");
         for (Request request : requestsSortedByTime) {
+            System.out.println(request.toString());
             System.out.println("-------------------------------------------------------------------------------");
-            System.out.println("ID: "+request.getId()+" Tiempo Limite: "+request.getLimitTime()+" Hora");
         }
     }
 
