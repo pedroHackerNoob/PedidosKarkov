@@ -30,6 +30,7 @@ public class ServiceSortPriority {
     }
 
     public static void showSortByPriority() {
+        System.out.println("\n-------------------------------------------------------------------------------");
         System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
         System.out.println("-------------------------------------------------------------------------------");
         for(Request request : requestsSort){

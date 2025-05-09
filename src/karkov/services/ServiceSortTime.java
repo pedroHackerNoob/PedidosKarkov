@@ -10,6 +10,7 @@ public class ServiceSortTime {
     public static void sortByTime(){
         ArrayList<Request> requestsSortedByTime= ServiceSortTime.sort(RepositoryRequest.getRequestArray());
 
+        System.out.println("\n-------------------------------------------------------------------------------");
         System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
         System.out.println("-------------------------------------------------------------------------------");
         for (Request request : requestsSortedByTime) {
