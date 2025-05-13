@@ -41,5 +41,6 @@ public class MenuDriver {
         } catch (Exception e) {
             System.out.println("ID no válido");
         }
+        sc.close();
     }
 }
