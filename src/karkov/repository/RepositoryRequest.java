@@ -34,8 +34,8 @@ public class RepositoryRequest {
     public static void showRequests() {
         for (Request r : requests) {
             System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
-            System.out.println("-------------------------------------------------------------------------------");
             System.out.println(r.toString());
+            System.out.println("-------------------------------------------------------------------------------");
         }
     }
 

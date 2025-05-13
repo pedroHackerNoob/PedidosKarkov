@@ -45,7 +45,7 @@ public class ServiceSortTime {
     }
 
     /**
-     * Método recursivo que divide la lista en sublistas para ordenarlas usando Merge Sort.
+     * Méthodo recursivo que divide la lista en sublistas para ordenarlas usando Merge Sort.
      *
      * @param requests Lista principal de solicitudes.
      * @param helper Arreglo auxiliar para facilitar la mezcla.

@@ -48,7 +48,7 @@ public class GraphPounder {
      *
      * @param inicio Zona desde la que se desea calcular las distancias mínimas.
      */
-    public void dijkstra(String inicio) {
+    public void obtenerCadaCamino(String inicio) {
         Map<String, Integer> distancias = new HashMap<>();
         Map<String, String> anteriores = new HashMap<>();
         PriorityQueue<String> cola = new PriorityQueue<>(Comparator.comparingInt(distancias::get));
