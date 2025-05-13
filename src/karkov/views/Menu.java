@@ -98,7 +98,8 @@ public class Menu {
                 break;
         }
 
-        // if (stillOperation()) optionMenus(); // Repetir si se desea continuar
+        if (stillOperation()) optionMenus(); // Repetir si se desea continuar
+        else sc.close();
     }
 
     /**

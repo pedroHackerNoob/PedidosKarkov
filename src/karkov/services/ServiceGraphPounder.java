@@ -11,19 +11,19 @@ import java.util.*;
  * Este grafo está pensado para representar zonas interconectadas, por ejemplo, en un
  * sistema de logística o distribución local.
  */
-public class GraphPounder {
+public class ServiceGraphPounder {
 
     /**
      * Mapa que representa el grafo, donde cada zona tiene una lista de aristas (conexiones) asociadas.
      */
-    private Map<String, List<Arista>> grafo = new HashMap<>();
+    private static Map<String, List<Arista>> grafo = new HashMap<>();
 
     /**
      * Agrega una nueva zona al grafo si aún no existe.
      *
      * @param zona Nombre de la zona a agregar.
      */
-    public void agregarZona(String zona) {
+    public static void agregarZona(String zona) {
         grafo.putIfAbsent(zona, new ArrayList<>());
     }
 
@@ -35,7 +35,7 @@ public class GraphPounder {
      * @param destino  Zona de destino.
      * @param distancia Distancia (peso) entre las dos zonas.
      */
-    public void agregarConexion(String origen, String destino, int distancia) {
+    public static void agregarConexion(String origen, String destino, int distancia) {
         grafo.putIfAbsent(origen, new ArrayList<>());
         grafo.putIfAbsent(destino, new ArrayList<>());
         grafo.get(origen).add(new Arista(destino, distancia));
@@ -48,7 +48,7 @@ public class GraphPounder {
      *
      * @param inicio Zona desde la que se desea calcular las distancias mínimas.
      */
-    public void obtenerCadaCamino(String inicio) {
+    public static void obtenerCadaCamino(String inicio) {
         Map<String, Integer> distancias = new HashMap<>();
         Map<String, String> anteriores = new HashMap<>();
         PriorityQueue<String> cola = new PriorityQueue<>(Comparator.comparingInt(distancias::get));
@@ -91,7 +91,7 @@ public class GraphPounder {
      * @param origen  Zona de origen.
      * @param destino Zona de destino.
      */
-    public void caminoMasCorto(String origen, String destino) {
+    public static void caminoMasCorto(String origen, String destino) {
         Map<String, Integer> distancias = new HashMap<>();
         Map<String, String> anteriores = new HashMap<>();
         PriorityQueue<String> cola = new PriorityQueue<>(Comparator.comparingInt(distancias::get));
@@ -133,7 +133,7 @@ public class GraphPounder {
      * @param destino    Zona final del recorrido.
      * @param anteriores Mapa que indica el nodo anterior en el camino mínimo hacia cada nodo.
      */
-    private void mostrarRuta(String destino, Map<String, String> anteriores) {
+    private static void mostrarRuta(String destino, Map<String, String> anteriores) {
         List<String> ruta = new ArrayList<>();
         while (destino != null) {
             ruta.add(destino);

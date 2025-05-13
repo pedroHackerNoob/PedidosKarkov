@@ -4,10 +4,10 @@
  */
 package karkov;
 
-import karkov.services.GraphPounder;
+import karkov.services.ServiceGraphPounder;
 import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
-import karkov.views.Menu;
+import karkov.views.MenuDriver;
 
 /**
  *
@@ -35,24 +35,25 @@ public class Karkov {
 //        ServiceSortPriority.showSortByPriority();
 //        ServiceSortTime.sortByTime();
 
-        GraphPounder map = new GraphPounder();
 
-        map.agregarConexion("Centro", "Zona A", 4);
-        map.agregarConexion("Centro", "Zona B", 2);
-        map.agregarConexion("Zona A", "Zona C", 5);
-        map.agregarConexion("Zona B", "Zona A", 1);
-        map.agregarConexion("Zona B", "Zona D", 7);
-        map.agregarConexion("Zona C", "Zona D", 3);
-        map.agregarConexion("Zona D", "Zona E", 2);
-        map.agregarConexion("Zona E", "Zona F", 3);
-        map.agregarConexion("Zona F", "Zona G", 2);
-        map.agregarConexion("Zona G", "Zona H", 4);
-        map.agregarConexion("Zona H", "Zona I", 1);
-        map.agregarConexion("Zona I", "Centro", 6); // Conexión cíclica para asegurar rutas alternativas
-        map.agregarConexion("Zona C", "Zona G", 6); // Otra ruta posible
-        map.agregarConexion("Zona B", "Zona F", 9); // Ruta larga alternativa
+        ServiceGraphPounder.agregarConexion("Centro", "Zona A", 4);
+        ServiceGraphPounder.agregarConexion("Centro", "Zona B", 2);
+        ServiceGraphPounder.agregarConexion("Zona A", "Zona C", 5);
+        ServiceGraphPounder.agregarConexion("Zona B", "Zona A", 1);
+        ServiceGraphPounder.agregarConexion("Zona B", "Zona D", 7);
+        ServiceGraphPounder.agregarConexion("Zona C", "Zona D", 3);
+        ServiceGraphPounder.agregarConexion("Zona D", "Zona E", 2);
+        ServiceGraphPounder.agregarConexion("Zona E", "Zona F", 3);
+        ServiceGraphPounder.agregarConexion("Zona F", "Zona G", 2);
+        ServiceGraphPounder.agregarConexion("Zona G", "Zona H", 4);
+        ServiceGraphPounder.agregarConexion("Zona H", "Zona I", 1);
+        ServiceGraphPounder.agregarConexion("Zona I", "Centro", 6); // Conexión cíclica para asegurar rutas alternativas
+        ServiceGraphPounder.agregarConexion("Zona C", "Zona G", 6); // Otra ruta posible
+        ServiceGraphPounder.agregarConexion("Zona B", "Zona F", 9); // Ruta larga alternativa
 
 //        map.obtenerCadaCamino("Centro");
-        Menu.optionMenus();
+//        Menu.optionMenus();
+        MenuDriver.selectRequest();
+//        ServiceGraphPounder.caminoMasCorto("Centro", RepositoryRequest.getRequest(8).getZone());
     }
 }
