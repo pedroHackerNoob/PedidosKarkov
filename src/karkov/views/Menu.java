@@ -193,8 +193,12 @@ public class Menu {
         System.out.println("Ingrese Id del pedido a encontrar");
         int id = sc.nextInt();
         if (RepositoryRequest.getRequest(id) != null) {
-            RepositoryRequest.getRequest(id).setId(id); // Esto puede ser innecesario
-            System.out.println("Encontrado\n: " + RepositoryRequest.getRequest(id).toString());
+            System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");
+            System.out.println("-------------------------------------------------------------------------------");
+
+//            RepositoryRequest.getRequest(id).setId(id); // Esto puede ser innecesario
+            System.out.println(RepositoryRequest.getRequest(id).toString());
+            System.out.println("-------------------------------------------------------------------------------");
         }
     }
 
