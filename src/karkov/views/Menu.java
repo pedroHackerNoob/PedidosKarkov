@@ -34,7 +34,7 @@ public class Menu {
         try {
             // Entrada de prueba reemplazando la interacción con el usuario:
             System.out.println("Ingrese número de casa: ");
-            System.out.println("Ingrese prioridad:\nBaja [3]\nMedia [2]\nAlta [1]");
+            System.out.println("Ingrese prioridad:\nBaja [1]\nMedia [2]\nAlta [3]");
             System.out.println("Ingrese límite de tiempo: ");
 
             // Datos simulados para pruebas:
@@ -69,37 +69,43 @@ public class Menu {
      * Muestra el menú de opciones principales del sistema y ejecuta la opción seleccionada.
      */
     public static void optionMenus() {
-        System.out.println("1. Add Request");
-        System.out.println("2. Show Requests");
-        System.out.println("3. Delete Request");
-        System.out.println("4. Update Request");
-        System.out.println("5. Exit Request");
+        while (true){
+            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] Mostrar Grafo de la ciudad");
 
-        int option = 1; // Valor predeterminado de prueba
+            int option = 0; // Valor predeterminado de prueba
 
-        try {
-            // option = sc.nextInt(); // Habilitar cuando se use entrada real
-        } catch (Exception e) {
-            System.out.println("Opción inválida.");
-            sc.next(); // Limpia el buffer
-            optionMenus(); // Vuelve a mostrar el menú
+            try {
+                 option = sc.nextInt();
+
+            } catch (Exception e) {
+                System.out.println("Opción inválida.");
+                sc.next(); // Limpia el buffer
+                continue; // Vuelve a mostrar el menú
+            }
+
+            switch (option) {
+                case 1:
+                    addRequest();
+                    RepositoryRequest.showRequests();
+                    break;
+                case 2:
+                    RepositoryRequest.showRequests();
+                    showRequest();
+                    break;
+                case 3:
+                    searchRequest();
+                    break;
+                case 4:
+                    grafoUi();
+                default:
+                    break;
+            }
+
+            if(!stillOperation()){ //desea repetir la operacion
+                break;
+            }
         }
 
-        switch (option) {
-            case 1:
-                addRequest();
-                RepositoryRequest.showRequests();
-                break;
-            case 2:
-                RepositoryRequest.showRequests();
-                showRequest();
-                break;
-            default:
-                break;
-        }
-
-        if (stillOperation()) optionMenus(); // Repetir si se desea continuar
-        else sc.close();
     }
 
     /**
@@ -117,10 +123,10 @@ public class Menu {
                 RepositoryRequest.showRequests();
                 break;
             case 2:
-                ServiceSortPriority.sortByPriority();
+                ServiceSortTime.sortByTime();
                 break;
             case 3:
-                ServiceSortTime.sortByTime();
+                ServiceSortPriority.sortByPriority();
                 break;
             default:
                 break;
@@ -135,7 +141,6 @@ public class Menu {
     public static boolean stillOperation() {
         System.out.println("¿Desea continuar? [y/n]");
         String still = null;
-
         try {
             still = sc.next();
         } catch (Exception e) {
@@ -143,8 +148,9 @@ public class Menu {
             System.out.println("Opción inválida.");
             stillOperation();
         }
+        if (still.equals("n")) return false;
 
-        return "y".equalsIgnoreCase(still);
+        return true;
     }
 
     /**
@@ -176,4 +182,20 @@ public class Menu {
                 "    \\______________________/                      \\\n" +
                 "                      2                            9\n");
     }
+
+    /**
+     * Permite buscar un pedido existente en el sistema mediante su ID.
+     *
+     * Solicita al usuario que ingrese el ID de un pedido, luego verifica si existe
+     * en el repositorio de solicitudes. Si el pedido es encontrado, se muestra su información.
+     */
+    public static void searchRequest() {
+        System.out.println("Ingrese Id del pedido a encontrar");
+        int id = sc.nextInt();
+        if (RepositoryRequest.getRequest(id) != null) {
+            RepositoryRequest.getRequest(id).setId(id); // Esto puede ser innecesario
+            System.out.println("Encontrado\n: " + RepositoryRequest.getRequest(id).toString());
+        }
+    }
+
 }

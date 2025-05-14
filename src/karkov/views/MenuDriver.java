@@ -21,26 +21,31 @@ public class MenuDriver {
      * Muestra todas las solicitudes disponibles y solicita al usuario el ID del pedido.
      */
     public static void selectRequest() {
-        int idTemp = 0;
-        String zone = null;
+        while (true) {
+            int idTemp = 0;
+            String zone = null;
 
-        RepositoryRequest.showRequests();
-        System.out.println("Ingrese ID del pedido:");
+            RepositoryRequest.showRequests();
+            System.out.println("Ingrese ID del pedido:");
 
-        try {
-            // Entrada de prueba fija. Reemplazar con: idTemp = sc.nextInt();
-            idTemp = 8;
+            try {
+                // Entrada de prueba fija. Reemplazar con: idTemp = sc.nextInt();
+                idTemp = sc.nextInt();
 
-            // Obtiene la zona asociada a la solicitud seleccionada.
-            zone = RepositoryRequest.getRequest(idTemp).getZone();
+                // Obtiene la zona asociada a la solicitud seleccionada.
+                zone = RepositoryRequest.getRequest(idTemp).getZone();
 
-            // Llama al servicio que calcula el camino más corto desde "Centro" a la zona.
-            // En pruebas se usa zona fija "Zona G"
-            ServiceGraphPounder.caminoMasCorto("Centro", "Zona G");
+                // Llama al servicio que calcula el camino más corto desde "Centro" a la zona.
+                ServiceGraphPounder.caminoMasCorto("Centro", zone);
 
-        } catch (Exception e) {
-            System.out.println("ID no válido");
+            } catch (Exception e) {
+                sc.next();
+                System.out.println("ID no válido");
+                continue;
+            }
+            if(!Menu.stillOperation()){ //desea repetir la operacion
+                break;
+            }
         }
-        sc.close();
     }
 }
