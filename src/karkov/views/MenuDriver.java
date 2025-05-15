@@ -26,7 +26,7 @@ public class MenuDriver {
             String zone = null;
 
             RepositoryRequest.showRequests();
-            System.out.println("Ingrese ID del pedido:");
+            System.out.println("Bienvenido Repartidor\nIngrese ID del pedido:");
 
             try {
                 // Entrada de prueba fija. Reemplazar con: idTemp = sc.nextInt();
@@ -35,15 +35,20 @@ public class MenuDriver {
                 // Obtiene la zona asociada a la solicitud seleccionada.
                 zone = RepositoryRequest.getRequest(idTemp).getZone();
 
+                //Muestra el grafo
+                Menu.grafoUi();
+
                 // Llama al servicio que calcula el camino más corto desde "Centro" a la zona.
                 ServiceGraphPounder.caminoMasCorto("Centro", zone);
-
             } catch (Exception e) {
                 sc.next();
                 System.out.println("ID no válido");
                 continue;
             }
-            if(!Menu.stillOperation()){ //desea repetir la operacion
+
+            System.out.println("Desea repetir para continuar? [y/n]");
+            String response = sc.next();
+            if(response.equals("n")|| response.equals("N")){ //desea repetir la operacion
                 break;
             }
         }

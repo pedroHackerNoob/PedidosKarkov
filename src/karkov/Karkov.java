@@ -7,6 +7,7 @@ package karkov;
 import karkov.services.ServiceGraphPounder;
 import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
+import karkov.services.ServiceSearchId;
 import karkov.views.Menu;
 import karkov.views.MenuDriver;
 
@@ -20,7 +21,7 @@ public class Karkov {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        RepositoryRequest.addRequest(new Request(0, "Zona A", "av. las flores #23", "baja", 5));
         RepositoryRequest.addRequest(new Request(1, "Zona A", "av. las flores #23", "baja", 5));
         RepositoryRequest.addRequest(new Request(2, "Zona B", "calle real, casa 11", "alta", 2));
         RepositoryRequest.addRequest(new Request(3, "Zona A", "barrio el centro #7", "media", 8));
@@ -30,6 +31,7 @@ public class Karkov {
         RepositoryRequest.addRequest(new Request(7, "Zona G", "calle el triunfo #42", "alta", 4));
         RepositoryRequest.addRequest(new Request(8, "Zona H", "calle central, casa 10", "media", 7));
         RepositoryRequest.addRequest(new Request(9, "Zona I", "zona norte, av 2", "baja", 3));
+        RepositoryRequest.addRequest(new Request(9, "Zona E", "zona sur, av 13", "baja", 3));
 
         ServiceGraphPounder.agregarConexion("Centro", "Zona A", 4);
         ServiceGraphPounder.agregarConexion("Centro", "Zona B", 2);
@@ -46,7 +48,10 @@ public class Karkov {
         ServiceGraphPounder.agregarConexion("Zona C", "Zona G", 6); // Otra ruta posible
         ServiceGraphPounder.agregarConexion("Zona B", "Zona F", 9); // Ruta larga alternativa
 //prueba mac git
-        Menu.optionMenus();
-        MenuDriver.selectRequest();
+//        Menu.optionMenus();
+//        MenuDriver.selectRequest();
+
+        ServiceSearchId.searchById(10);
+        ServiceSearchId.searchById(3);
     }
 }

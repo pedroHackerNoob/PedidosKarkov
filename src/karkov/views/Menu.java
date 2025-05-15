@@ -70,7 +70,7 @@ public class Menu {
      */
     public static void optionMenus() {
         while (true){
-            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] Mostrar Grafo de la ciudad");
+            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] Mostrar Grafo de la ciudad\n[5] cambiar a repartidor");
 
             int option = 0; // Valor predeterminado de prueba
 
@@ -101,7 +101,7 @@ public class Menu {
                     break;
             }
 
-            if(!stillOperation()){ //desea repetir la operacion
+            if(option == 5){ //desea repetir la operacion
                 break;
             }
         }
@@ -132,27 +132,6 @@ public class Menu {
                 break;
         }
     }
-
-    /**
-     * Pregunta al usuario si desea continuar con la operación.
-     *
-     * @return {@code true} si el usuario desea continuar, {@code false} en caso contrario.
-     */
-    public static boolean stillOperation() {
-        System.out.println("¿Desea continuar? [y/n]");
-        String still = null;
-        try {
-            still = sc.next();
-        } catch (Exception e) {
-            sc.next();
-            System.out.println("Opción inválida.");
-            stillOperation();
-        }
-        if (still.equals("n")) return false;
-
-        return true;
-    }
-
     /**
      * Imprime una representación en texto (ASCII) del grafo de zonas y sus conexiones.
      */
