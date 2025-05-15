@@ -45,7 +45,7 @@ public class Karkov {
         ServiceGraphPounder.agregarConexion("Zona I", "Centro", 6); // Conexión cíclica para asegurar rutas alternativas
         ServiceGraphPounder.agregarConexion("Zona C", "Zona G", 6); // Otra ruta posible
         ServiceGraphPounder.agregarConexion("Zona B", "Zona F", 9); // Ruta larga alternativa
-
+//prueba mac git
         Menu.optionMenus();
         MenuDriver.selectRequest();
     }
