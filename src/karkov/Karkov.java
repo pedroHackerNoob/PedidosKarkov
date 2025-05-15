@@ -48,10 +48,10 @@ public class Karkov {
         ServiceGraphPounder.agregarConexion("Zona C", "Zona G", 6); // Otra ruta posible
         ServiceGraphPounder.agregarConexion("Zona B", "Zona F", 9); // Ruta larga alternativa
 //prueba mac git
-//        Menu.optionMenus();
-//        MenuDriver.selectRequest();
+        Menu.optionMenus();
+        MenuDriver.selectRequest();
 
-        ServiceSearchId.searchById(10);
-        ServiceSearchId.searchById(3);
+//        ServiceSearchId.searchById(10);
+//        ServiceSearchId.searchById(3);
     }
 }
