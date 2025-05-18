@@ -35,9 +35,6 @@ public class MenuDriver {
                 // Obtiene la zona asociada a la solicitud seleccionada.
                 zone = RepositoryRequest.getRequest(idTemp).getZone();
 
-                //Muestra el grafo
-                Menu.grafoUi();
-
                 // Llama al servicio que calcula el camino más corto desde "Centro" a la zona.
                 ServiceGraphPounder.caminoMasCorto("Centro", zone);
             } catch (Exception e) {

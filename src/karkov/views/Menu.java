@@ -70,7 +70,7 @@ public class Menu {
      */
     public static void optionMenus() {
         while (true){
-            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] Mostrar Grafo de la ciudad\n[5] cambiar a repartidor");
+            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido[5] cambiar a repartidor");
 
             int option = 0; // Valor predeterminado de prueba
 
@@ -95,8 +95,6 @@ public class Menu {
                 case 3:
                     searchRequest();
                     break;
-                case 4:
-                    grafoUi();
                 default:
                     break;
             }
@@ -131,35 +129,6 @@ public class Menu {
             default:
                 break;
         }
-    }
-    /**
-     * Imprime una representación en texto (ASCII) del grafo de zonas y sus conexiones.
-     */
-    public static void grafoUi() {
-        System.out.println("                [Zona C]\n" +
-                "                   |\n" +
-                "                 5 |\n" +
-                "                   |\n" +
-                "               [Zona A]\n" +
-                "                   |\n" +
-                "        4          |           1\n" +
-                "Centro -------- [Zona B] ---------\n" +
-                " |              /   |   \\         \\\n" +
-                " |            2    7     9         \\\n" +
-                " |           /     |       \\        \\\n" +
-                " |         /       |         \\        \\\n" +
-                "[Zona I]--6       [Zona D]     \\        \\\n" +
-                "   |                 |          \\        \\\n" +
-                "   |                 2           \\        \\\n" +
-                "   |                 |            \\        \\\n" +
-                "[Zona H] --------- [Zona E]        \\        \\\n" +
-                "   |                   |            \\        \\\n" +
-                "   1                   3             \\        \\\n" +
-                "   |                   |              \\        \\\n" +
-                "[Zona G] <------------- [Zona F] <-----         \\\n" +
-                "   ^         6             ^                    \\\n" +
-                "    \\______________________/                      \\\n" +
-                "                      2                            9\n");
     }
 
     /**
