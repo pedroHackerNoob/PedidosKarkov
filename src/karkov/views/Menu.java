@@ -26,22 +26,28 @@ public class Menu {
      */
     private static void addRequest() {
         String zone = "Zona ";
-        System.out.println("Ingrese Zona:\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ ");
+        System.out.println("" +
+                "Ingrese Zona:" +
+                "\nA\tB \tC" +
+                "\nD\tE\tF" +
+                "\nG\tI\tJ ");
+
         String home = null;
         String priority = null;
         int tempo = 0;
 
         try {
             // Entrada de prueba reemplazando la interacción con el usuario:
+            zone += sc.next();
             System.out.println("Ingrese número de casa: ");
             System.out.println("Ingrese prioridad:\nBaja [1]\nMedia [2]\nAlta [3]");
+            priority = sc.next();
             System.out.println("Ingrese límite de tiempo: ");
 
             // Datos simulados para pruebas:
-            home = "113";
-            priority = "1";
-            zone += "b";
-            tempo = 666;
+            home = "113(default)";
+
+            tempo = sc.nextInt();
 
         } catch (Exception e) {
             sc.next(); // Limpia el buffer
@@ -70,7 +76,8 @@ public class Menu {
      */
     public static void optionMenus() {
         while (true){
-            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido[5] cambiar a repartidor");
+            System.out.println("\n==========================================\nHome:");
+            System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] cambiar a repartidor");
 
             int option = 0; // Valor predeterminado de prueba
 
@@ -97,6 +104,8 @@ public class Menu {
                     break;
                 default:
                     break;
+                case 4:
+                    MenuDriver.selectRequest();
             }
 
             if(option == 5){ //desea repetir la operacion

@@ -26,7 +26,7 @@ public class MenuDriver {
             String zone = null;
 
             RepositoryRequest.showRequests();
-            System.out.println("Bienvenido Repartidor\nIngrese ID del pedido:");
+            System.out.println("\n==========================================\nBienvenido Repartidor\nIngrese ID del pedido:");
 
             try {
                 // Entrada de prueba fija. Reemplazar con: idTemp = sc.nextInt();
