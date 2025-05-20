@@ -20,7 +20,8 @@ public class ServiceSortTime {
      * las ordena por su hora límite (LimitTime) y las imprime en consola con formato.
      */
     public static void sortByTime() {
-        ArrayList<Request> requestsSortedByTime = ServiceSortTime.sort(RepositoryRequest.getRequestArray());
+        ArrayList<Request> requestsSortedByTime = new ArrayList<>(RepositoryRequest.getRequestArray());
+        sort(requestsSortedByTime);
 
         System.out.println("\n-------------------------------------------------------------------------------");
         System.out.println("| ID  | Zona            | Dirección                      | Prioridad | Hora Limite |");

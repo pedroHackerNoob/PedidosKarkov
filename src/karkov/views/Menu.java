@@ -79,7 +79,7 @@ public class Menu {
             System.out.println("\n==========================================\nHome:");
             System.out.println("[1] Agregar Pedido\n[2] Mostrar pedido\n[3] Buscar pedido\n[4] cambiar a repartidor");
 
-            int option = 0; // Valor predeterminado de prueba
+            int option = 2; // Valor predeterminado de prueba
 
             try {
                  option = sc.nextInt();
