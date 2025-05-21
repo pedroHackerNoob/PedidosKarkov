@@ -39,12 +39,5 @@ public class Karkov {
 
         // Llamada al menú principal del sistema
         Menu.optionMenus();
-
-        // Llamada adicional para seleccionar un pedido y mostrar ruta
-        MenuDriver.selectRequest();
-
-        // Llamadas de prueba para búsqueda por ID (comentadas)
-        // ServiceSearchId.searchById(10);
-        // ServiceSearchId.searchById(3);
     }
 }
