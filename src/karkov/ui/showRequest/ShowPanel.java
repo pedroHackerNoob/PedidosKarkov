@@ -170,10 +170,7 @@ public class ShowPanel extends javax.swing.JPanel {
             makeTable(ServiceSortTime.requestsSortedByTime);
         } else if (opt==3) {
 
-            if (xd == 0){
-//                ServiceSortPriority.sortByPriority();
-                ++xd;
-            }
+            ServiceSortPriority.sortByPriority();
             makeTable(ServiceSortPriority.requestsSort);
         }
     }
