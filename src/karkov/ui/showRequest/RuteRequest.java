@@ -92,6 +92,7 @@ public class RuteRequest extends javax.swing.JPanel {
         for( String zone : ServiceGraphPounder.ruta){
             ways+= " " + zone+" ->";
         }
+        ways+=" "+"End";
         ruteLabel.setText(ways);
     }//GEN-LAST:event_ruteComboBoxActionPerformed
 
