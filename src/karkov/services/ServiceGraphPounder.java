@@ -18,6 +18,7 @@ public class ServiceGraphPounder {
      */
     private static Map<String, List<Arista>> grafo = new HashMap<>();
     public static List<String> ruta = new ArrayList<>();
+    public static int distancess = 0;
 
     /**
      * Agrega una nueva zona al grafo si aún no existe.
@@ -123,6 +124,7 @@ public class ServiceGraphPounder {
             System.out.print("Camino más corto de " + origen + " a " + destino + ": ");
             mostrarRuta(destino, anteriores);
             System.out.println(" | Distancia total: " + distancias.get(destino));
+            distancess = distancias.get(destino);
         }
     }
 

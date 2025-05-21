@@ -32,6 +32,7 @@ public class RuteRequest extends javax.swing.JPanel {
         rutePanel = new javax.swing.JPanel();
         ruteLabel = new javax.swing.JLabel();
         ruteComboBox = new javax.swing.JComboBox<>();
+        distanceLabel = new javax.swing.JLabel();
 
         rutePanel.setBackground(new java.awt.Color(33, 158, 188));
 
@@ -46,6 +47,10 @@ public class RuteRequest extends javax.swing.JPanel {
             }
         });
 
+        distanceLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        distanceLabel.setForeground(new java.awt.Color(0, 0, 0));
+        distanceLabel.setText("Distance:");
+
         javax.swing.GroupLayout rutePanelLayout = new javax.swing.GroupLayout(rutePanel);
         rutePanel.setLayout(rutePanelLayout);
         rutePanelLayout.setHorizontalGroup(
@@ -54,17 +59,23 @@ public class RuteRequest extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addComponent(ruteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(ruteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1235, Short.MAX_VALUE)
+                .addGroup(rutePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rutePanelLayout.createSequentialGroup()
+                        .addComponent(distanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ruteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1235, Short.MAX_VALUE))
                 .addContainerGap())
         );
         rutePanelLayout.setVerticalGroup(
             rutePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rutePanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(rutePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ruteLabel)
-                    .addComponent(ruteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(rutePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ruteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruteLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(distanceLabel)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -94,10 +105,12 @@ public class RuteRequest extends javax.swing.JPanel {
         }
         ways+=" "+"End";
         ruteLabel.setText(ways);
+        distanceLabel.setText("Distance: "+ServiceGraphPounder.distancess);
     }//GEN-LAST:event_ruteComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel distanceLabel;
     private javax.swing.JComboBox<String> ruteComboBox;
     private javax.swing.JLabel ruteLabel;
     private javax.swing.JPanel rutePanel;
