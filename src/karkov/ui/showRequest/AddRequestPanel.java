@@ -6,6 +6,7 @@ package karkov.ui.showRequest;
 
 import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
+import karkov.services.ServiceSortPriority;
 
 import javax.swing.*;
 
@@ -43,6 +44,7 @@ public class AddRequestPanel extends javax.swing.JPanel {
         addRequestPanel.setBackground(new java.awt.Color(142, 202, 230));
 
         zoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zone", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+        zoneComboBox.setSelectedIndex(1);
         zoneComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zoneComboBoxActionPerformed(evt);
@@ -50,6 +52,7 @@ public class AddRequestPanel extends javax.swing.JPanel {
         });
 
         aptNumberComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apt", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16" }));
+        aptNumberComboBox.setSelectedIndex(2);
         aptNumberComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aptNumberComboBoxActionPerformed(evt);
@@ -57,6 +60,7 @@ public class AddRequestPanel extends javax.swing.JPanel {
         });
 
         priorityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Priority", "Alta", "Media", "Baja" }));
+        priorityComboBox.setSelectedIndex(2);
 
         limitTimeTextField.setText("Limit time");
         limitTimeTextField.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -141,7 +145,7 @@ public class AddRequestPanel extends javax.swing.JPanel {
 
     private void addRequestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRequestButtonActionPerformed
         //
-        String zone = (String) zoneComboBox.getSelectedItem();
+        String zone = "Zona "+(String) zoneComboBox.getSelectedItem();
         String aptNumber = (String) aptNumberComboBox.getSelectedItem();
         String priority = (String) priorityComboBox.getSelectedItem();
         String limitTime = limitTimeTextField.getText();

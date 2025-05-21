@@ -142,8 +142,7 @@ public class ShowPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void recentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recentButtonActionPerformed
-        System.out.println("button");
-//        cambiar
+
         makeSortTable(1);
     }//GEN-LAST:event_recentButtonActionPerformed
 
@@ -163,7 +162,6 @@ public class ShowPanel extends javax.swing.JPanel {
             ServiceSortTime.sortByTime();
             makeTable(ServiceSortTime.requestsSortedByTime);
         } else if (opt==3) {
-
             ServiceSortPriority.sortByPriority();
             makeTable(ServiceSortPriority.requestsSort);
         }
@@ -174,7 +172,6 @@ public class ShowPanel extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
             model.setRowCount(0); // Clear existing rows
 
-//            ArrayList<Request> requests = ;
             if (requests != null) {
                 for (Request request : requests) {
                     if (request != null) {
