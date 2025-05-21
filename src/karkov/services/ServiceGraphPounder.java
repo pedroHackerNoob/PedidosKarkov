@@ -134,6 +134,7 @@ public class ServiceGraphPounder {
      * @param anteriores Mapa que indica el nodo anterior en el camino mínimo hacia cada nodo.
      */
     private static void mostrarRuta(String destino, Map<String, String> anteriores) {
+        ruta.clear();
         while (destino != null) {
             ruta.add(destino);
             destino = anteriores.get(destino);
