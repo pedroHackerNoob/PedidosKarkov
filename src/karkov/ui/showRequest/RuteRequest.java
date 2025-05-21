@@ -8,7 +8,6 @@ import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
 import karkov.services.ServiceGraphPounder;
 
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
