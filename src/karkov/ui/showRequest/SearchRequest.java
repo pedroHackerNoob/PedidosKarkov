@@ -127,7 +127,7 @@ public class SearchRequest extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> searchIdComboBox;
+    public static javax.swing.JComboBox<String> searchIdComboBox;
     private javax.swing.JTable searchTable;
     // End of variables declaration//GEN-END:variables
 }

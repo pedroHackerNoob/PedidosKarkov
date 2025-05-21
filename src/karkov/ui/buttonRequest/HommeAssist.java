@@ -4,6 +4,7 @@
  */
 package karkov.ui.buttonRequest;
 
+import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
 import karkov.ui.Home;
 import karkov.ui.showRequest.AddRequestPanel;
@@ -127,6 +128,11 @@ public class HommeAssist extends javax.swing.JPanel {
         Home.superiorPanel.removeAll();
         Home.superiorPanel.add(searchRequest, BorderLayout.CENTER);
         Home.superiorPanel.revalidate();
+
+        for(Request request : RepositoryRequest.getRequestArray()){
+            String idS = String.valueOf(request.getId());
+            SearchRequest.searchIdComboBox.addItem(idS);
+        }
 
     }//GEN-LAST:event_searchButtonActionPerformed
 
