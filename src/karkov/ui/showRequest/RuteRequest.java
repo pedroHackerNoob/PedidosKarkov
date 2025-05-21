@@ -89,6 +89,7 @@ public class RuteRequest extends javax.swing.JPanel {
         String rute = (String) ruteComboBox.getSelectedItem();
         ServiceGraphPounder.caminoMasCorto("Centro", rute);
 
+
     }//GEN-LAST:event_ruteComboBoxActionPerformed
 
 
