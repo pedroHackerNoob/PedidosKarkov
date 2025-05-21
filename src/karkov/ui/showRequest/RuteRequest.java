@@ -4,9 +4,6 @@
  */
 package karkov.ui.showRequest;
 
-import karkov.models.Request;
-import karkov.repository.RepositoryRequest;
-import karkov.services.ServiceGraphPounder;
 
 
 /**
@@ -87,7 +84,7 @@ public class RuteRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
         //
         String rute = (String) ruteComboBox.getSelectedItem();
-        ServiceGraphPounder.caminoMasCorto("Centro", rute);
+//        ServiceGraphPounder.caminoMasCorto("Centro", rute);
 
 
     }//GEN-LAST:event_ruteComboBoxActionPerformed
