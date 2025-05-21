@@ -14,13 +14,13 @@ import java.util.ArrayList;
  * de atención para facilitar su gestión.
  */
 public class ServiceSortTime {
-
+    public static ArrayList<Request> requestsSortedByTime = new ArrayList<>(RepositoryRequest.getRequestArray());
     /**
      * Méthodo principal que obtiene una lista de solicitudes desde el repositorio,
      * las ordena por su hora límite (LimitTime) y las imprime en consola con formato.
      */
     public static void sortByTime() {
-        ArrayList<Request> requestsSortedByTime = new ArrayList<>(RepositoryRequest.getRequestArray());
+
         sort(requestsSortedByTime);
 
         System.out.println("\n-------------------------------------------------------------------------------");

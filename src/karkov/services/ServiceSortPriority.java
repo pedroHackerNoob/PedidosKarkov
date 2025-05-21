@@ -6,7 +6,7 @@ import karkov.repository.RepositoryRequest;
 import java.util.ArrayList;
 
 public class ServiceSortPriority {
-    static ArrayList<Request> requestsSort = new ArrayList<>();
+    public static ArrayList<Request> requestsSort = new ArrayList<>();
 
     public static void sortByPriority() {
         ArrayList<Request> requestsSortLow = new ArrayList<>();
