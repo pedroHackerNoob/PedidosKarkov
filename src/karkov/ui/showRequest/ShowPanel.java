@@ -6,6 +6,8 @@ package karkov.ui.showRequest;
 
 import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
+import karkov.services.ServiceSortPriority;
+import karkov.services.ServiceSortTime;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -141,23 +143,47 @@ public class ShowPanel extends javax.swing.JPanel {
 
     private void recentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recentButtonActionPerformed
         System.out.println("button");
-        makeTable();
+//        cambiar
+        makeSortTable(1);
     }//GEN-LAST:event_recentButtonActionPerformed
 
     private void sortPriorityButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortPriorityButton1ActionPerformed
-        // TODO add your handling code here:
+        makeSortTable(3);
     }//GEN-LAST:event_sortPriorityButton1ActionPerformed
 
     private void sortTimeButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortTimeButton2ActionPerformed
-        // TODO add your handling code here:
+        ShowPanel.makeSortTable(2);
     }//GEN-LAST:event_sortTimeButton2ActionPerformed
+//    select sort for make
+    public static void makeSortTable(int opt){
+        int xd = 0;
+        boolean time = false;
 
-    public static void makeTable(){
+        if (opt ==1){
+            makeTable(RepositoryRequest.getRequestArray());
+        } else if (opt==2) {
+
+            if(!time){
+                ServiceSortTime.sortByTime();
+                time = true;
+            }
+            makeTable(ServiceSortTime.requestsSortedByTime);
+        } else if (opt==3) {
+
+            if (xd == 0){
+//                ServiceSortPriority.sortByPriority();
+                ++xd;
+            }
+            makeTable(ServiceSortPriority.requestsSort);
+        }
+    }
+//    make sort
+    private static void makeTable(ArrayList<Request> requests){
         try {
             DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
             model.setRowCount(0); // Clear existing rows
 
-            ArrayList<Request> requests = RepositoryRequest.getRequestArray();
+//            ArrayList<Request> requests = ;
             if (requests != null) {
                 for (Request request : requests) {
                     if (request != null) {
@@ -176,6 +202,7 @@ public class ShowPanel extends javax.swing.JPanel {
             System.err.println("Error updating table: " + e.getMessage());
         }
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton recentButton;

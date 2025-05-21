@@ -4,6 +4,7 @@
  */
 package karkov.ui.buttonRequest;
 
+import karkov.repository.RepositoryRequest;
 import karkov.ui.Home;
 import karkov.ui.showRequest.AddRequestPanel;
 import karkov.ui.showRequest.ShowPanel;
@@ -136,7 +137,7 @@ public class HommeAssist extends javax.swing.JPanel {
         Home.superiorPanel.revalidate();
         Home.superiorPanel.repaint();
 
-        ShowPanel.makeTable();
+        ShowPanel.makeSortTable(1);
     }//GEN-LAST:event_showRequestsButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
