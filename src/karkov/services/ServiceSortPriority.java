@@ -6,28 +6,49 @@ import karkov.repository.RepositoryRequest;
 import java.util.ArrayList;
 
 public class ServiceSortPriority {
-    public static ArrayList<Request> requestsSort = new ArrayList<>();
+    private static final String HIGH_PRIORITY = "alta";
+    private static final String MEDIUM_PRIORITY = "media";
+    private static final String LOW_PRIORITY = "baja";
+
+    private static ArrayList<Request> requestsSort = new ArrayList<>();
 
     public static void sortByPriority() {
+        // Clear previous results
+        requestsSort.clear();
+
         ArrayList<Request> requestsSortLow = new ArrayList<>();
         ArrayList<Request> requestsSortMedium = new ArrayList<>();
         ArrayList<Request> requestsSortHigh = new ArrayList<>();
 
-        for(int i = 0; i < RepositoryRequest.getRequests().size(); i++){
-            if (RepositoryRequest.getRequests().get(i).getPrority().equals("baja")) {
-                requestsSortLow.add(RepositoryRequest.getRequests().get(i));
-            } else if (RepositoryRequest.getRequests().get(i).getPrority().equals("media")) {
-                requestsSortMedium.add(RepositoryRequest.getRequests().get(i));
-            } else if (RepositoryRequest.getRequests().get(i).getPrority().equals("alta")) {
-                requestsSortHigh.add(RepositoryRequest.getRequests().get(i));
+        for(Request request : RepositoryRequest.getRequests()) {
+            if (request == null || request.getPrority() == null) {
+                continue;
             }
 
+            String priority = request.getPrority();
+            switch(priority) {
+                case LOW_PRIORITY:
+                    requestsSortLow.add(request);
+                    break;
+                case MEDIUM_PRIORITY:
+                    requestsSortMedium.add(request);
+                    break;
+                case HIGH_PRIORITY:
+                    requestsSortHigh.add(request);
+                    break;
+                default:
+                    // prioridad desconocida priority
+                    break;
+            }
         }
+
         requestsSort.addAll(requestsSortHigh);
         requestsSort.addAll(requestsSortMedium);
         requestsSort.addAll(requestsSortLow);
+
         showSortByPriority();
     }
+
 
     private static void showSortByPriority() {
         System.out.println("\n-------------------------------------------------------------------------------");
