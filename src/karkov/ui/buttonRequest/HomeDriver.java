@@ -87,9 +87,6 @@ public class HomeDriver extends javax.swing.JPanel {
         Home.superiorPanel.revalidate();
         Home.superiorPanel.repaint();
 
-        for(Request request : RepositoryRequest.getRequestArray()){
-            RuteRequest.ruteComboBox.addItem(request.getZone());
-        }
     }//GEN-LAST:event_selectRuteButtonActionPerformed
 
 

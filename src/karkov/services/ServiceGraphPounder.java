@@ -17,7 +17,7 @@ public class ServiceGraphPounder {
      * Mapa que representa el grafo, donde cada zona tiene una lista de aristas (conexiones) asociadas.
      */
     private static Map<String, List<Arista>> grafo = new HashMap<>();
-    public static ArrayList<String> ways = new ArrayList<>();
+    public static List<String> ruta = new ArrayList<>();
 
     /**
      * Agrega una nueva zona al grafo si aún no existe.
@@ -93,7 +93,6 @@ public class ServiceGraphPounder {
      * @param destino Zona de destino.
      */
     public static void caminoMasCorto(String origen, String destino) {
-        ways.clear();
         Map<String, Integer> distancias = new HashMap<>();
         Map<String, String> anteriores = new HashMap<>();
         PriorityQueue<String> cola = new PriorityQueue<>(Comparator.comparingInt(distancias::get));
@@ -104,8 +103,6 @@ public class ServiceGraphPounder {
         }
         distancias.put(origen, 0);
         cola.add(origen);
-        ways.add(origen);
-
         while (!cola.isEmpty()) {
             String actual = cola.poll();
             if (!visitados.add(actual)) continue;
@@ -116,7 +113,6 @@ public class ServiceGraphPounder {
                     distancias.put(arista.getDestino(), nuevaDistancia);
                     anteriores.put(arista.getDestino(), actual);
                     cola.add(arista.getDestino());
-                    ways.add(arista.getDestino());
                 }
             }
         }
@@ -138,7 +134,6 @@ public class ServiceGraphPounder {
      * @param anteriores Mapa que indica el nodo anterior en el camino mínimo hacia cada nodo.
      */
     private static void mostrarRuta(String destino, Map<String, String> anteriores) {
-        List<String> ruta = new ArrayList<>();
         while (destino != null) {
             ruta.add(destino);
             destino = anteriores.get(destino);

@@ -39,7 +39,7 @@ public class RuteRequest extends javax.swing.JPanel {
         ruteLabel.setForeground(new java.awt.Color(0, 0, 0));
         ruteLabel.setText("From: centro");
 
-        ruteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rute" }));
+        ruteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rute", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
         ruteComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ruteComboBoxActionPerformed(evt);
@@ -84,12 +84,12 @@ public class RuteRequest extends javax.swing.JPanel {
     private void ruteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ruteComboBoxActionPerformed
         // TODO add your handling code here:
         //
-        String rute = (String) ruteComboBox.getSelectedItem();
+        String rute = "Zona "+(String) ruteComboBox.getSelectedItem();
         ServiceGraphPounder.caminoMasCorto("Centro", rute);
 
-
+        ruteLabel.setText("");
         String ways= "Start from:";
-        for( String zone : ServiceGraphPounder.ways){
+        for( String zone : ServiceGraphPounder.ruta){
             ways+= " " + zone+" ->";
         }
         ruteLabel.setText(ways);
@@ -97,7 +97,7 @@ public class RuteRequest extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JComboBox<String> ruteComboBox;
+    private javax.swing.JComboBox<String> ruteComboBox;
     private javax.swing.JLabel ruteLabel;
     private javax.swing.JPanel rutePanel;
     // End of variables declaration//GEN-END:variables
