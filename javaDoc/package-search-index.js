@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"karkov"},{"l":"karkov.models"},{"l":"karkov.repository"},{"l":"karkov.services"},{"l":"karkov.views"}];updateSearchResults();
