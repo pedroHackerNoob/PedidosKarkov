@@ -4,6 +4,14 @@
  */
 package karkov.ui.buttonRequest;
 
+import karkov.models.Request;
+import karkov.repository.RepositoryRequest;
+import karkov.ui.Home;
+import karkov.ui.showRequest.RuteRequest;
+import karkov.ui.showRequest.SearchRequest;
+
+import java.awt.*;
+
 /**
  *
  * @author blackhawk
@@ -27,18 +35,35 @@ public class HomeDriver extends javax.swing.JPanel {
     private void initComponents() {
 
         panelDriver = new javax.swing.JPanel();
+        selectRuteButton = new javax.swing.JButton();
 
         panelDriver.setBackground(new java.awt.Color(33, 158, 188));
+
+        selectRuteButton.setBackground(new java.awt.Color(255, 183, 3));
+        selectRuteButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        selectRuteButton.setForeground(new java.awt.Color(0, 0, 0));
+        selectRuteButton.setText("Select Rute");
+        selectRuteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectRuteButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelDriverLayout = new javax.swing.GroupLayout(panelDriver);
         panelDriver.setLayout(panelDriverLayout);
         panelDriverLayout.setHorizontalGroup(
             panelDriverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 365, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDriverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(selectRuteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelDriverLayout.setVerticalGroup(
             panelDriverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 548, Short.MAX_VALUE)
+            .addGroup(panelDriverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(selectRuteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(464, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -53,8 +78,23 @@ public class HomeDriver extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void selectRuteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectRuteButtonActionPerformed
+        RuteRequest ruteRequest = new RuteRequest();
+        ruteRequest.setSize(1416, 102);
+        ruteRequest.setLocation(0, 0);
+        Home.superiorPanel.removeAll();
+        Home.superiorPanel.add(ruteRequest, BorderLayout.CENTER);
+        Home.superiorPanel.revalidate();
+        Home.superiorPanel.repaint();
+
+        for(Request request : RepositoryRequest.getRequestArray()){
+            RuteRequest.ruteComboBox.addItem(request.getZone());
+        }
+    }//GEN-LAST:event_selectRuteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel panelDriver;
+    private javax.swing.JButton selectRuteButton;
     // End of variables declaration//GEN-END:variables
 }

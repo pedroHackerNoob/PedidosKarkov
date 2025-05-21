@@ -37,7 +37,7 @@ public class Home extends javax.swing.JFrame {
         leftPanel = new javax.swing.JPanel();
         centerPanel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        driverButton = new javax.swing.JButton();
         homeAssistanceButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,10 +84,15 @@ public class Home extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 183, 3));
 
-        jButton1.setBackground(new java.awt.Color(33, 158, 188));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Home Driver");
+        driverButton.setBackground(new java.awt.Color(33, 158, 188));
+        driverButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        driverButton.setForeground(new java.awt.Color(0, 0, 0));
+        driverButton.setText("Home Driver");
+        driverButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                driverButtonActionPerformed(evt);
+            }
+        });
 
         homeAssistanceButton.setBackground(new java.awt.Color(33, 158, 188));
         homeAssistanceButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -105,7 +110,7 @@ public class Home extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addComponent(driverButton, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -117,7 +122,7 @@ public class Home extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(103, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(driverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -174,6 +179,17 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_homeAssistanceButtonActionPerformed
 
+    private void driverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_driverButtonActionPerformed
+        // TODO add your handling code here:
+        HomeDriver homeDriver = new HomeDriver();
+        homeDriver.setSize(365, 548);
+        homeDriver.setLocation(0,0);
+        leftPanel.removeAll();
+        leftPanel.add(homeDriver, BorderLayout.CENTER);
+        leftPanel.revalidate();
+        leftPanel.repaint();
+    }//GEN-LAST:event_driverButtonActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -212,8 +228,8 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel centerPanel;
+    private javax.swing.JButton driverButton;
     private javax.swing.JButton homeAssistanceButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel leftPanel;
     public static javax.swing.JPanel superiorPanel;
