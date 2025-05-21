@@ -6,6 +6,7 @@ package karkov.ui.showRequest;
 
 import karkov.models.Request;
 import karkov.repository.RepositoryRequest;
+import karkov.services.ServiceGraphPounder;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -42,6 +43,11 @@ public class RuteRequest extends javax.swing.JPanel {
         ruteLabel.setText("From: centro");
 
         ruteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rute" }));
+        ruteComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ruteComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout rutePanelLayout = new javax.swing.GroupLayout(rutePanel);
         rutePanel.setLayout(rutePanelLayout);
@@ -77,6 +83,14 @@ public class RuteRequest extends javax.swing.JPanel {
                 .addComponent(rutePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ruteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ruteComboBoxActionPerformed
+        // TODO add your handling code here:
+        //
+        String rute = (String) ruteComboBox.getSelectedItem();
+        ServiceGraphPounder.caminoMasCorto("Centro", rute);
+
+    }//GEN-LAST:event_ruteComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
