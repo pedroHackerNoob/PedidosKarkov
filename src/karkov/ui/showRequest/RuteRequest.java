@@ -87,6 +87,8 @@ public class RuteRequest extends javax.swing.JPanel {
 //        ServiceGraphPounder.caminoMasCorto("Centro", rute);
 
 
+        String ways;
+
     }//GEN-LAST:event_ruteComboBoxActionPerformed
 
 
