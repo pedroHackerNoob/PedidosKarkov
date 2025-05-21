@@ -99,7 +99,6 @@
                 <StringItem index="10" value="J"/>
               </StringArray>
             </Property>
-            <Property name="selectedIndex" type="int" value="1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zoneComboBoxActionPerformed"/>
@@ -130,7 +129,6 @@
                 <StringItem index="15" value="16"/>
               </StringArray>
             </Property>
-            <Property name="selectedIndex" type="int" value="2"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aptNumberComboBoxActionPerformed"/>

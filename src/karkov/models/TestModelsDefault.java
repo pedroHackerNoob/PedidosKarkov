@@ -5,17 +5,17 @@ import karkov.services.ServiceGraphPounder;
 
 public class TestModelsDefault {
     public static void defaultTest(){
-        RepositoryRequest.addRequest(new Request(0, "Zona A", "av. las flores #23", "baja", 5));
-        RepositoryRequest.addRequest(new Request(1, "Zona A", "av. las flores #23", "baja", 5));
-        RepositoryRequest.addRequest(new Request(2, "Zona B", "calle real, casa 11", "alta", 2));
-        RepositoryRequest.addRequest(new Request(3, "Zona A", "barrio el centro #7", "media", 8));
-        RepositoryRequest.addRequest(new Request(4, "Zona C", "col. altavista, pasaje 4", "alta", 6));
-        RepositoryRequest.addRequest(new Request(5, "Zona D", "av. del mar #19", "media", 1));
-        RepositoryRequest.addRequest(new Request(6, "Zona F", "res. el bosque, bloque C", "baja", 9));
-        RepositoryRequest.addRequest(new Request(7, "Zona G", "calle el triunfo #42", "alta", 4));
-        RepositoryRequest.addRequest(new Request(8, "Zona H", "calle central, casa 10", "media", 7));
-        RepositoryRequest.addRequest(new Request(9, "Zona I", "zona norte, av 2", "baja", 3));
-        RepositoryRequest.addRequest(new Request(10, "Zona E", "zona sur, av 13", "baja", 3));
+        RepositoryRequest.addRequest(new Request(0, "Zona A", "apt 2", "baja", 5));
+        RepositoryRequest.addRequest(new Request(1, "Zona A", "apt 4", "baja", 5));
+        RepositoryRequest.addRequest(new Request(2, "Zona B", "apt 6", "alta", 2));
+        RepositoryRequest.addRequest(new Request(3, "Zona A", "apt 3", "media", 8));
+        RepositoryRequest.addRequest(new Request(4, "Zona C", "apt 4", "alta", 6));
+        RepositoryRequest.addRequest(new Request(5, "Zona D", "apt 8", "media", 1));
+        RepositoryRequest.addRequest(new Request(6, "Zona F", "apt 5", "baja", 9));
+        RepositoryRequest.addRequest(new Request(7, "Zona G", "apt 7", "alta", 4));
+        RepositoryRequest.addRequest(new Request(8, "Zona H", "apt 7", "media", 7));
+        RepositoryRequest.addRequest(new Request(9, "Zona I", "apt 9", "baja", 3));
+        RepositoryRequest.addRequest(new Request(10, "Zona E", "apt 1", "baja", 3));
 
         // Configuración de conexiones entre zonas (grafo con pesos)
         ServiceGraphPounder.agregarConexion("Centro", "Zona A", 4);

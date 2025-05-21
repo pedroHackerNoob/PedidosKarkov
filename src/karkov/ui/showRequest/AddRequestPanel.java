@@ -44,7 +44,6 @@ public class AddRequestPanel extends javax.swing.JPanel {
         addRequestPanel.setBackground(new java.awt.Color(142, 202, 230));
 
         zoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zone", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
-        zoneComboBox.setSelectedIndex(1);
         zoneComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zoneComboBoxActionPerformed(evt);
@@ -52,7 +51,6 @@ public class AddRequestPanel extends javax.swing.JPanel {
         });
 
         aptNumberComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apt", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16" }));
-        aptNumberComboBox.setSelectedIndex(2);
         aptNumberComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aptNumberComboBoxActionPerformed(evt);
@@ -156,6 +154,10 @@ public class AddRequestPanel extends javax.swing.JPanel {
             RepositoryRequest.addRequest(new Request(RepositoryRequest.getRequestArray().size(),zone,aptNumber,priority,limitInt));
             ShowPanel.makeSortTable(1);
         }
+        zoneComboBox.setSelectedIndex(0);
+        aptNumberComboBox.setSelectedIndex(0);
+        priorityComboBox.setSelectedIndex(0);
+        limitTimeTextField.setText("Limit time");
     }//GEN-LAST:event_addRequestButtonActionPerformed
 
 

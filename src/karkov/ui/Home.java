@@ -40,6 +40,7 @@ public class Home extends javax.swing.JFrame {
         homeAssistanceButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pedidos karkov");
 
         superiorPanel.setBackground(new java.awt.Color(251, 133, 0));
         superiorPanel.setForeground(new java.awt.Color(255, 255, 51));
