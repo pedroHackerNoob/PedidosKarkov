@@ -7,9 +7,11 @@ package karkov.ui.buttonRequest;
 import karkov.repository.RepositoryRequest;
 import karkov.ui.Home;
 import karkov.ui.showRequest.AddRequestPanel;
+import karkov.ui.showRequest.SearchRequest;
 import karkov.ui.showRequest.ShowPanel;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -36,7 +38,7 @@ public class HommeAssist extends javax.swing.JPanel {
         panelAssist = new javax.swing.JPanel();
         addRequestButon = new javax.swing.JButton();
         showRequestsButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
 
         panelAssist.setBackground(new java.awt.Color(33, 158, 188));
 
@@ -60,13 +62,13 @@ public class HommeAssist extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 183, 3));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Search Request");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchButton.setBackground(new java.awt.Color(255, 183, 3));
+        searchButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(0, 0, 0));
+        searchButton.setText("Search Request");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchButtonActionPerformed(evt);
             }
         });
 
@@ -79,7 +81,7 @@ public class HommeAssist extends javax.swing.JPanel {
                 .addGroup(panelAssistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addRequestButon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(showRequestsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
+                    .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelAssistLayout.setVerticalGroup(
@@ -90,7 +92,7 @@ public class HommeAssist extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(showRequestsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(296, Short.MAX_VALUE))
         );
 
@@ -117,9 +119,16 @@ public class HommeAssist extends javax.swing.JPanel {
         Home.superiorPanel.repaint();
     }//GEN-LAST:event_addRequestButonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void searchButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // T
+        SearchRequest searchRequest = new SearchRequest();
+        searchRequest.setSize(1416, 102);
+        searchRequest.setLocation(0, 0);
+        Home.superiorPanel.removeAll();
+        Home.superiorPanel.add(searchRequest, BorderLayout.CENTER);
+        Home.superiorPanel.revalidate();
+
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     private void showRequestsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showRequestsButtonActionPerformed
         ShowPanel showPanel = new ShowPanel();
@@ -142,8 +151,8 @@ public class HommeAssist extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addRequestButon;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel panelAssist;
+    private javax.swing.JButton searchButton;
     private javax.swing.JButton showRequestsButton;
     // End of variables declaration//GEN-END:variables
 }
