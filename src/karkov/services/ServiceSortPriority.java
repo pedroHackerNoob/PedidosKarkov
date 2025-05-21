@@ -10,7 +10,7 @@ public class ServiceSortPriority {
     private static final String MEDIUM_PRIORITY = "media";
     private static final String LOW_PRIORITY = "baja";
 
-    private static ArrayList<Request> requestsSort = new ArrayList<>();
+    public static ArrayList<Request> requestsSort = new ArrayList<>();
 
     public static void sortByPriority() {
         // Clear previous results
