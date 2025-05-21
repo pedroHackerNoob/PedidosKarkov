@@ -156,8 +156,6 @@ public class ShowPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_sortTimeButton2ActionPerformed
 //    select sort for make
     public static void makeSortTable(int opt){
-        int xd = 0;
-        boolean time = false;
 
         if (opt ==1){
             makeTable(RepositoryRequest.getRequestArray());
