@@ -43,8 +43,8 @@
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="ruteComboBox" min="-2" pref="84" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="ruteLabel" min="-2" pref="165" max="-2" attributes="0"/>
-                  <EmptySpace pref="1082" max="32767" attributes="0"/>
+                  <Component id="ruteLabel" pref="1235" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -5,6 +5,7 @@
 package karkov.ui.showRequest;
 
 
+import karkov.services.ServiceGraphPounder;
 
 /**
  *
@@ -53,8 +54,8 @@ public class RuteRequest extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addComponent(ruteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(ruteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1082, Short.MAX_VALUE))
+                .addComponent(ruteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1235, Short.MAX_VALUE)
+                .addContainerGap())
         );
         rutePanelLayout.setVerticalGroup(
             rutePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,11 +85,14 @@ public class RuteRequest extends javax.swing.JPanel {
         // TODO add your handling code here:
         //
         String rute = (String) ruteComboBox.getSelectedItem();
-//        ServiceGraphPounder.caminoMasCorto("Centro", rute);
+        ServiceGraphPounder.caminoMasCorto("Centro", rute);
 
 
-        String ways;
-
+        String ways= "Start from:";
+        for( String zone : ServiceGraphPounder.ways){
+            ways+= " " + zone+" ->";
+        }
+        ruteLabel.setText(ways);
     }//GEN-LAST:event_ruteComboBoxActionPerformed
 
 
