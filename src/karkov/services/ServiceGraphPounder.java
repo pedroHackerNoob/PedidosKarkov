@@ -17,7 +17,7 @@ public class ServiceGraphPounder {
      * Mapa que representa el grafo, donde cada zona tiene una lista de aristas (conexiones) asociadas.
      */
     private static Map<String, List<Arista>> grafo = new HashMap<>();
-    public static List<String> ruta = new ArrayList<>();
+    public static List<String> ruta = new ArrayList<>();//ruta
 
     /**
      * Agrega una nueva zona al grafo si aún no existe.
