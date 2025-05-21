@@ -159,6 +159,7 @@ public class ShowPanel extends javax.swing.JPanel {
         if (opt ==1){
             makeTable(RepositoryRequest.getRequestArray());
         } else if (opt==2) {
+            ServiceSortTime.addRequest();
             ServiceSortTime.sortByTime();
             makeTable(ServiceSortTime.requestsSortedByTime);
         } else if (opt==3) {
