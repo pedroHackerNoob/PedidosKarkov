@@ -59,8 +59,7 @@ public class AddRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        priorityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Priority", "Alta", "Media", "Baja" }));
-        priorityComboBox.setSelectedIndex(2);
+        priorityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Priority", "alta", "media", "baja" }));
 
         limitTimeTextField.setText("Limit time");
         limitTimeTextField.addFocusListener(new java.awt.event.FocusAdapter() {
