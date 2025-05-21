@@ -4,6 +4,11 @@
  */
 package karkov.ui.showRequest;
 
+import karkov.models.Request;
+import karkov.repository.RepositoryRequest;
+
+import javax.swing.*;
+
 /**
  *
  * @author blackhawk
@@ -61,6 +66,11 @@ public class AddRequestPanel extends javax.swing.JPanel {
         });
 
         addRequestButton.setText("Add Request");
+        addRequestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addRequestButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,6 +138,22 @@ public class AddRequestPanel extends javax.swing.JPanel {
         limitTimeTextField.setText("");
         
     }//GEN-LAST:event_limitTimeTextFieldFocusGained
+
+    private void addRequestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRequestButtonActionPerformed
+        //
+        String zone = (String) zoneComboBox.getSelectedItem();
+        String aptNumber = (String) aptNumberComboBox.getSelectedItem();
+        String priority = (String) priorityComboBox.getSelectedItem();
+        String limitTime = limitTimeTextField.getText();
+
+        if (zone.equals("Zone") || aptNumber.equals("Apt") || priority.equals("Priority") || limitTime.equals("Limit time")) {
+            JOptionPane.showMessageDialog(null, "Please fill all fields");
+        } else {
+            int limitInt = Integer.parseInt(limitTime);
+            RepositoryRequest.addRequest(new Request(RepositoryRequest.getRequestArray().size(),zone,aptNumber,priority,limitInt));
+            ShowPanel.makeSortTable(1);
+        }
+    }//GEN-LAST:event_addRequestButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
